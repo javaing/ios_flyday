@@ -94,7 +94,7 @@ class DetailViewController: UIViewController,UITableViewDelegate,UITableViewData
         //var tblView = UIView(frame: CGRectZero)
         //tableView.tableFooterView = tblView
         //tableView.tableFooterView?.hidden = true
-        tableView.backgroundColor = UIColor.yellowColor()
+        //tableView.backgroundColor = UIColor.yellowColor()
         //self.configureView()
         //self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "detaillcell")
         

@@ -25,9 +25,9 @@ class MasterViewController: UITableViewController {
     
     func post(url: String, info: String, completionHandler: (responseString: NSString!, error: NSError!) -> ()) {
         let URL: NSURL = NSURL(string: url)!
-        var request:NSMutableURLRequest = NSMutableURLRequest(URL:URL)
+        let request:NSMutableURLRequest = NSMutableURLRequest(URL:URL)
         request.HTTPMethod = "POST";
-        var bodyData = info;
+        let bodyData = info;
         request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()){
@@ -63,9 +63,9 @@ class MasterViewController: UITableViewController {
         
         
         let myURLStr = "http://buddha.flyday.com.tw/ShowAllPath.aspx"
-       if let myURL = NSURL(string: myURLStr) {
+        if let myURL = NSURL(string: myURLStr) {
             var error: NSError?
-        
+            
             do {
                 let myHtmlStr = try NSString(contentsOfURL: myURL, encoding: NSUTF8StringEncoding)
                 //let myHtmlStr = NSString(contentsOfURL: myURL, encoding: NSUTF8StringEncoding, error: &error)
