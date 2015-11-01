@@ -51,10 +51,13 @@ class DetailViewController: UIViewController,UITableViewDelegate,UITableViewData
 
         
         let myURLStr = self.detailItem?["link"]
+        
+        
         if let myURL = NSURL(string: myURLStr!) {
             var error: NSError?
             //var nssencoding: NSStringEncoding
             //let myHtmlStr = NSString(contentsOfURL: myURL, usedEncoding: &nssencoding, error: &error)
+            myURL
             let myHtmlStr: NSString?
             do {
                 myHtmlStr = try NSString(contentsOfURL: myURL, encoding: NSUTF8StringEncoding)

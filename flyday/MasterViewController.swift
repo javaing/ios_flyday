@@ -110,7 +110,9 @@ class MasterViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 
-                let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
+                let controller = segue.destinationViewController as! DetailViewController
+                
+                //let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
                 var dic:[String:String]=["author":"antique"]
                 dic["link"] = itemsLink[indexPath.row]
                 dic["title"] = items[indexPath.row]
@@ -133,10 +135,17 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
-        //let object = objects[indexPath.row] as! NSDate
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         cell.textLabel!.text = items[indexPath.row]
+    
+        cell.textLabel!.font = UIFont.boldSystemFontOfSize(15)
+        //cell.textLabel.lineBreakMode = UILineBreakModeCharacterWrap
+        //cell.selectionStyle = UITableViewCellSelectionStyleNone
+        //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator
+        //cell.textLabel!.numberOfLines = 0;
+        
         return cell
     }
     
